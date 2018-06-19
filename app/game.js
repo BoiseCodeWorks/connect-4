@@ -1,9 +1,3 @@
-angular.module('con4', [])
-	.component('gameComponent', {
-		templateUrl: 'app/game.html',
-		controller: GameController
-	})
-
 function GameController() {
 
 		var gc = this
@@ -27,15 +21,15 @@ function GameController() {
 		 * }
 		 */
 
-		//Once you finishe building your grid make sure gc.newGame is setting 
+		//Once you finished building your grid make sure gc.newGame is setting 
 		//gc.grid = buildGrid();
-		//If your build grid is working correctly you can start up your server to see the grid
-		//drawn to the screen.
+		//then setting the grid to the page using something like document.getElementById
 		}
 
 		gc.dropToken = function (col) {
 		//The col is passed in from the view
 		//Column is full no space available
+
 		//Bad Drop
 		if (gc.grid[0][col].hasToken) {
 			return;
@@ -54,7 +48,7 @@ function GameController() {
 		 * set the cell by accessing 
 		 * gc.grid[row][col]
 		 * set cell.hasToken = true
-		 * set cell.color gc.activePlayer
+		 * set the cell background-color appropriately
 		 **/
 
 		//endTurn and checkVictory
@@ -84,7 +78,7 @@ function GameController() {
 
 		function checkVictory(cell) {
 		//This one is a gimme you shouldn't have to change anything here
-		//Once you fix the checkNextCell function the green squiggles should dissapear.
+		//Once you fix the checkNextCell function the squiggles should dissapear.
 		//If they don't make sure you are returning a number from the checkNextCell function
 
 		var horizontalMatches = 0;
